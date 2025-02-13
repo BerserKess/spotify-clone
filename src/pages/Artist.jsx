@@ -8,24 +8,25 @@ import { songsArray } from '../assets/database/songs'
 const Artist = () => {
     const { id } = useParams();
 
-    const artists = artistArray.filter(
+    const { name, banner } = artistArray.filter(
         (artist) => artist.id === Number(id)
     )[0];
 
 
     const songsArrayFromArtist = songsArray.filter(
-        (song) => song.artist === artists.name
+        (song) => song.artist === name
     );
 
     const randomIndex = Math.floor(
-        Math.random() * 10);
+        Math.random() * (songsArrayFromArtist.length - 1)
+    );
 
     const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
 
     return (
         <section className='rounded-2xl container-margin overflow-hidden flex flex-col flex-1'>
-            <div className='bg-cover bg-[position-y:15%] h-[40svh] p-6 flex items-end' style={{ backgroundImage: `linear-gradient(to bottom, #00000040, #00000040),url(${artists.banner})` }}>
-                <h2 className='text-8xl font-bold leading-[100%]'>{artists.name}</h2>
+            <div className='bg-cover bg-[position-y:15%] h-[40svh] p-6 flex items-end' style={{ backgroundImage: `linear-gradient(to bottom, #00000040, #00000040),url(${banner})` }}>
+                <h2 className='text-8xl font-bold leading-[100%]'>{name}</h2>
             </div>
 
             <div className='flex-1 bg-body p-6 py-10 relative flex flex-col gap-6'>
