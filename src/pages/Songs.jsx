@@ -1,8 +1,10 @@
 import React from 'react'
+import MainSection from '../components/MainSection'
+
 
 const Songs = () => {
     return (
-        <div>Songs</div>
+        <MainSection type="songs" />
     )
 }
 

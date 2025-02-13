@@ -1,8 +1,9 @@
 import React from 'react'
+import MainSection from '../components/MainSection'
 
 const Artists = () => {
     return (
-        <div>Artists</div>
+        <MainSection type="artists" />
     )
 }
 
