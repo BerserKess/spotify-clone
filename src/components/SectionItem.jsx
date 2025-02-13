@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const SectionItem = ({ id, name, image, artist, idPath }) => {
     return (
-        <Link to={`${idPath}/${id}`} className="flex flex-col items-center gap-6 px-4 py-6 rounded-2xl hover:bg-[#03160a] cursor-pointer group w-[200px]">
+        <Link to={`${idPath}/${id}`} className="flex flex-col items-center gap-6 px-4 py-6 rounded-2xl hover:bg-[#020b0580] cursor-pointer group ">
             <div className="relative ">
                 <div className="w-[140px] h-[140px] rounded-[50%] overflow-hidden flex items-center justify-center">
                     <img src={image} alt="" />
