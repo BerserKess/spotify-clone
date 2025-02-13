@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SongItem = () => {
+const SongItem = ({ image, name, duration, artist, audio, id, index }) => {
     return (
-        <Link to={"/song/1"} className='flex gap-6 items-center justify-between cursor-pointer py-2.5 px-2.5 transition duration-200 ease-in hover:bg-green-900 hover:text-[#79eca1]'>
+        <Link to={`/song/${id}`} className='flex gap-6 items-center justify-between cursor-pointer py-2.5 px-2.5 transition duration-200 ease-in hover:bg-green-900 hover:text-[#79eca1]'>
             <div className='flex items-center gap-6'>
-                <p>1</p>
+                <p>{index + 1}</p>
                 <div className='flex gap-3 items-center'>
-                    <img className='max-w-10 rounded-sm' src="https://i.scdn.co/image/ab67616d00001e028aca7c95468481cf5411060e" alt="Imagem da Música X" />
-                    <p className='font-medium '>Amo Noite E Dia - Live In Sao Paulo / 2010</p>
+                    <img className='max-w-10 rounded-sm' src={image} alt={`Imagem da Música ${artist}`} />
+                    <p className='font-medium '>{name}</p>
                 </div>
             </div>
-            <p className='justify-end'>3:03</p>
+            <p className='justify-end'>{duration}</p>
         </Link>
     )
 }
